@@ -5,6 +5,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export function buildPlugins({
   paths,
+  isDev
 }: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     // При запуске сборки проекта этот плагин будет автоматически создавать HTML-файл на основе заданных параметров. Он может использовать шаблон HTML-файла (как указано в параметре template) и вставлять в него ссылки на собранные JavaScript и CSS файлы, а также другие настройки, которые вы определите.
@@ -17,5 +18,8 @@ export function buildPlugins({
       filename: `css/[name].[contenthash:8].css`,
       chunkFilename: `css/[name].[contenthash:8].css`,
     }),
+    new webpack.DefinePlugin({
+      __IS_DEV__: JSON.stringify(isDev)
+    })
   ];
 }

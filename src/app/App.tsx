@@ -4,17 +4,22 @@ import { useTheme } from "./providers/ThemeProvider";
 import { AppRouter } from "./providers/router";
 import { Navbar } from "widgets/Navbar";
 import { Siderbar } from "widgets/Sidebar";
+import { Suspense } from "react";
+
+
 
 export const App = () => {
   const { theme } = useTheme();
 
   return (
     <div className={classNames("app", {}, [theme])}>
-      <Navbar />
-      <div className="content-page">
-        <Siderbar />
-        <AppRouter />
-      </div>
+      <Suspense fallback="">
+        <Navbar />
+        <div className="content-page">
+          <Siderbar />
+          <AppRouter />
+        </div>
+      </Suspense>
     </div>
   );
 };
