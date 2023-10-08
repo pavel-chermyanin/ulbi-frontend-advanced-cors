@@ -31,7 +31,7 @@ export function buildWebpackConfig(
       // rules (или module.rules) в конфигурации Webpack используется для определения, какие загрузчики (loaders) следует применять к определенным файлам в процессе сборки. Загрузчики позволяют преобразовывать и обрабатывать файлы перед тем, как они будут включены в собранную сборку. В вашем примере:
       rules: buildLoaders(options),
     },
-    resolve: buildResolvers(),
+    resolve: buildResolvers(options),
     devtool: isDev ? "inline-source-map" : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
   };
