@@ -10,6 +10,17 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         use: ['@svgr/webpack'],
     };
 
+    const babelLoader = {
+        test: /\.(js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env'],
+            },
+        },
+    };
+
     const cssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -48,5 +59,5 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     };
 
     // возврат loaders имеет значение, поэтому присваиваем в отдельные переменные
-    return [fileLoader, svgLoader, typescriptLoader, cssLoader];
+    return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
 }
