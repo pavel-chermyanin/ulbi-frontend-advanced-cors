@@ -11,7 +11,9 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "*":["./src/*"]// все пути будут идти относительно папки src
+      "*": [
+        "./src/*"
+      ] // все пути будут идти относительно папки src
     },
   },
   // В разделе "ts-node" настроены параметры для ts-node, инструмента, позволяющего выполнять TypeScript файлы непосредственно в Node.js. Здесь "module": "CommonJS" указывает формат модулей для исполнения TypeScript файлов в Node.js, который будет использоваться при использовании ts-node.
@@ -19,5 +21,10 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": [
+    "./config/jest/setupTests.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ]
 }
