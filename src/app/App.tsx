@@ -13,7 +13,7 @@ export const App = () => {
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
                 <Navbar />
-                <button type="button" onClick={() => setIsOpen(true)}>toggle</button>
+                {/* <button type="button" onClick={() => setIsOpen(true)}>toggle</button> */}
                 <div className="content-page">
                     <Sidebar />
                     <AppRouter />
