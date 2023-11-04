@@ -1,0 +1,5 @@
+{
+    "editor.snippetSuggestions": "top",
+    "emmet.showSuggestionsAsSnippets": true,
+    "reactSnippets.settings.prettierEnabled": true
+}

@@ -4,6 +4,7 @@ module.exports = {
         es2021: true,
         jest: true,
     },
+
     extends: ['plugin:react/recommended', 'airbnb', 'plugin:storybook/recommended'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -18,10 +19,7 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
-        'react/jsx-filename-extension': [
-            2,
-            { extensions: ['.js', '.jsx', '.tsx'] },
-        ],
+        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
         'no-unused-vars': 'warn',
@@ -39,6 +37,22 @@ module.exports = {
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
+        'no-param-reassign': 'off',
+        'react/jsx-one-expression-per-line': 'off',
+        'no-unsafe-optional-chaining': 'off',
+        'no-useless-return': 'error',
+        'react/jsx-wrap-multilines': [
+            'error',
+            {
+                declaration: 'parens',
+                assignment: 'parens',
+                return: 'parens',
+                arrow: 'parens',
+                condition: 'ignore',
+                logical: 'ignore',
+                prop: 'ignore',
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,
