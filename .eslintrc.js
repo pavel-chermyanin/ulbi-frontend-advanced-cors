@@ -8,9 +8,7 @@ module.exports = {
     extends: ['plugin:react/recommended', 'airbnb', 'plugin:storybook/recommended'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        ecmaFeatures: {
-            jsx: true,
-        },
+        ecmaFeatures: { jsx: true },
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
@@ -53,8 +51,18 @@ module.exports = {
                 prop: 'ignore',
             },
         ],
+        'object-curly-newline': [
+            'error',
+            {
+                ObjectExpression: { multiline: true, minProperties: 3 },
+                ObjectPattern: {
+                    multiline: true,
+                    minProperties: 5,
+                },
+                ImportDeclaration: 'never',
+                ExportDeclaration: { multiline: true, minProperties: 3 },
+            },
+        ],
     },
-    globals: {
-        __IS_DEV__: true,
-    },
+    globals: { __IS_DEV__: true },
 };
