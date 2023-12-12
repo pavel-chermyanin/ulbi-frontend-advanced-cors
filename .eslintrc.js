@@ -5,7 +5,12 @@ module.exports = {
         jest: true,
     },
 
-    extends: ['plugin:react/recommended', 'airbnb', 'plugin:storybook/recommended'],
+    extends: [
+        'plugin:react/recommended',
+        'airbnb',
+        'plugin:storybook/recommended',
+        // 'plugin:prettier/recommended',
+    ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: { jsx: true },
@@ -54,13 +59,13 @@ module.exports = {
         'object-curly-newline': [
             'error',
             {
-                ObjectExpression: { multiline: true, minProperties: 3 },
+                ObjectExpression: { multiline: true, consistent: true },
                 ObjectPattern: {
                     multiline: true,
-                    minProperties: 5,
+                    consistent: true,
                 },
                 ImportDeclaration: 'never',
-                ExportDeclaration: { multiline: true, minProperties: 3 },
+                ExportDeclaration: { multiline: true, consistent: true },
             },
         ],
     },
